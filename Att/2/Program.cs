@@ -6,23 +6,24 @@ int n = Convert.ToInt32(Console.ReadLine());
 
 AkkermanFunction(m,n);
 
-void AkkermanFunction(int n, int m)
+
+void AkkermanFunction(int m, int n)
 {
-    Console.Write(Akkerman(n, m)); 
+    Console.Write(Akkerman(m, n)); 
 }
 
 int Akkerman(int m, int n)
 {
-    if (n == 0)
+    if (m == 0)
     {
-        return m + 1;
+        return n + 1;
     }
-    else if (m == 0 && n > 0)
+    else if (n == 0 && m > 0)
     {
-        return Akkerman(n - 1, 1);
+        return Akkerman(m - 1, 1);
     }
     else
     {
-        return (Akkerman(n - 1, Akkerman(n, m - 1)));
+        return (Akkerman(m - 1, Akkerman(m, n - 1)));
     }
 }
